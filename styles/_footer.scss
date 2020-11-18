@@ -1,0 +1,44 @@
+footer {
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: $maastricht-blue;
+  
+  .social-menu {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+
+    &__social-logo {
+      margin: 5px;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      transition: .4s;
+    }
+  }
+
+  .footer-nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+    &__nav {
+      width: 50%;
+    }
+
+    #copyright {
+      color: $periwinkle;
+      margin: 20px;
+    }
+  }
+  
+  
+}
+
+
+

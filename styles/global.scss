@@ -1,0 +1,68 @@
+body {
+  background: $background;
+}
+
+h1 {
+  font-size: 48px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+p {
+  font-family: 'Rubik', sans-serif;
+  font-size: 24px
+}
+
+a {
+  text-decoration: none;
+  color: $periwinkle;
+}
+
+ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+li {
+  position: relative;
+  border-radius: 10px;
+  font-family: 'Nunito', sans-serif;
+  color: $periwinkle;
+  font-size: 30px;
+  transition: .5s;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -1px;
+    left: 0;
+    background-color: $periwinkle;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover::before {
+    visibility: visible;
+    width: 100%;
+  }
+}
+
+
+
+.portlink {
+  text-decoration: none;
+  color: $airforce-blue;
+}

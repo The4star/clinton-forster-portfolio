@@ -1,0 +1,14 @@
+query {
+  entries {
+    allSocialLinks(skip: 0, take: 20) {
+      nodes {
+        id
+        socialLinkTitle,
+        socialLink
+        socialLinkImage {
+          url
+        }
+      }
+    }
+  }
+}
