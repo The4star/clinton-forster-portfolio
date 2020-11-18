@@ -1,33 +1,29 @@
 import React from 'react'
+import Link from 'next/link'
 
-import { FooterProps } from '../types/footer.types'
+import { FooterProps } from '../types/navAndFooter.types'
+import SocialLink from './SocialLink';
 
 const Footer = ({
   socialLinks
-}:FooterProps) => {
-  console.log(socialLinks);
-  
+}:FooterProps) => {  
   return (
     <footer>
       
-      <div className="social-menu">
+      <div className="socials">
         {
           socialLinks.map((socialLink, i) => (
-            <div key={`sociallink${i}`} className="social-menu__social-logo">
-              <a href={socialLink.link} target="_blank">
-                <img src={socialLink.image} alt={socialLink.title}/>
-              </a>
-            </div>
+            <SocialLink key={`sociallink${i}`} socialLink={socialLink} i={i} />
           ))
         }
       </div>
       <div className="footer-nav-menu">
         <div className="footer-nav-menu__nav">
           <ul>
-            <li><a href="./index.html">Main</a></li>
-            <li><a href="./portfolio.html">Portfolio</a></li>
-            <li><a href="./#skills">Skills</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+            <li><Link href="/">Main</Link></li>
+            <li><Link href="/portfolio">Portfolio</Link></li>
+            <li><Link href="/#skills">Skills</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
           </ul>
         </div>
       <p id="copyright"> &copy; Clinton Forster {new Date().getFullYear()}</p>

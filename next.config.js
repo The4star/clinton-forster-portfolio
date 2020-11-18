@@ -1,4 +1,7 @@
 module.exports = {
+  images: {
+    domains: ['cdn.pokko.io'],
+  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.(graphql|gql)$/,

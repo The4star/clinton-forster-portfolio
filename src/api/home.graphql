@@ -1,0 +1,29 @@
+query {
+  entries {
+    hero(id: "12145eb1-64f0-418b-98a8-33c35bdfaded") {
+      id
+      heroTitle
+      heroSubtitle
+      heroMedia{
+        url
+      }
+    }
+    logo(id: "4275eeb8-7184-42d2-8e7d-c1f9633973e3") {
+        id
+        logoTitle
+        logoImage{
+        	url
+        }
+    }
+    allSocialLinks(skip: 0, take: 20) {
+      nodes {
+        id
+        socialLinkTitle
+        socialLink
+        socialLinkImage {
+          url
+        }
+      }
+    }
+  }
+}

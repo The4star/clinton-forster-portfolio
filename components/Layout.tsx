@@ -1,15 +1,22 @@
 import React from 'react'
-import { ISocialLinks } from '../types/footer.types'
+import { IHero } from '../types/hero.types'
+import { ILogo, ISocialLink } from '../types/navAndFooter.types'
 import Footer from './Footer'
+import HeroContainer from './HeroContainer'
+import Nav from './Nav'
 
 interface IProps {
-  children: any,
-  socialLinks: ISocialLinks[];
+  children: any;
+  logo: ILogo;
+  hero: IHero;
+  socialLinks: ISocialLink[];
 }
 
-const Layout = ({children, socialLinks}:IProps) => {
+const Layout = ({children, logo, hero, socialLinks}:IProps) => {
   return (
     <>
+      <Nav logo={logo} />
+      <HeroContainer hero={hero} socialLinks={socialLinks} />
       <main>{children}</main>
       <Footer socialLinks={socialLinks}/>
     </>

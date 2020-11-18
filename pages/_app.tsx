@@ -16,6 +16,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           rel="icon"
           href="favicon.ico"
         />
+         <title>Clinton Forster Portfolio</title>
       </Head>
       <Component {...pageProps} />
     </>

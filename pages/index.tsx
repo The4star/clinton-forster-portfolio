@@ -2,17 +2,23 @@ import React from "react";
 import Head from 'next/head'
 import Layout from "../components/Layout";
 import { client } from "../src/pokko";
-import { ISocialLinks } from "../types/footer.types";
+import { ILogo, ISocialLink } from "../types/navAndFooter.types";
+import { IHero } from "../types/hero.types";
 
-const query = require("../src/api/footer.graphql");
+const query = require("../src/api/home.graphql");
 
 interface IProps {
-  socialLinks: ISocialLinks[]
+  logo: ILogo;
+  hero: IHero;
+  socialLinks: ISocialLink[];
 }
-const Home = ({socialLinks}:IProps) => {
+const Home = ({logo, hero, socialLinks}:IProps) => {
   return (
-    <Layout socialLinks={socialLinks}>
-      <div>hello</div>
+    <Layout 
+      logo={logo}
+      hero={hero}
+      socialLinks={socialLinks}
+    >
     </Layout>
   )
 }
@@ -22,7 +28,7 @@ export async function getStaticProps() {
     query,
   });
   
-  const data = res?.data?.entries?.allSocialLinks?.nodes ?? null;
+  const data = res?.data?.entries ?? null;
   if (!data) {
     if (res?.errors) {
       console.warn("**** errors", JSON.stringify(res.errors));
@@ -32,9 +38,18 @@ export async function getStaticProps() {
     console.log("**** no data", JSON.stringify(res));
     return { props: {} };
   }
-
+  
   const props:IProps = {
-    socialLinks: data.map(node => {
+    logo: data.logo,
+    hero: {
+      title: data.hero.heroTitle,
+      subtitle: data.hero.heroSubtitle,
+      media: {
+        type: "video",
+        url: data.hero.heroMedia.url
+      }
+    },
+    socialLinks: data.allSocialLinks.nodes.map(node => {
       return {
         title: node.socialLinkTitle,
         link: node.socialLink,
