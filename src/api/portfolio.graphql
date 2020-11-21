@@ -1,6 +1,6 @@
 query {
   entries {
-    hero(id: "12145eb1-64f0-418b-98a8-33c35bdfaded") {
+    hero(id: "ef954031-5bc3-497e-b8da-31a4834b73da") {
       id
       heroTitle
       heroSubtitle
@@ -21,27 +21,6 @@ query {
         socialLinkTitle
         socialLink
         socialLinkImage {
-          url
-        }
-      }
-    }
-    allAbout(skip: 0, take: 20){
-      nodes {
-        id
-        aboutContent
-        aboutProfilePhoto{
-          url
-        }
-        resumeLink
-      }
-    }
-    allAttribute(skip: 0, take: 100){
-      nodes{
-        id
-        attributeOrder
-        attributeFor
-        attributeTitle
-        attributeImage{
           url
         }
       }

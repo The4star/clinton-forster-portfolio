@@ -9,10 +9,15 @@ interface IProps {
 }
 const HeroContainer = ({socialLinks, hero}: IProps) => {
   return (
-    <div className="video-container">
-      <div className="video-container__colour-overlay"></div>
-      <video className="video-container__video-hero" src={hero.media.url} autoPlay muted loop></video>
-      <div className="video-container__text">
+    <div className="hero-container">
+      <div className="hero-container__colour-overlay"></div>
+      {
+        hero.media.type === "video" ?
+        <video className="hero-container__video-hero" src={hero.media.url} autoPlay muted loop></video>
+        :
+        <img className="hero-container__image-hero" src={hero.media.url} alt={hero.title}></img>
+      }
+      <div className="hero-container__text">
         <h1>{hero.title}</h1>
         {
           hero.subtitle ?
@@ -22,7 +27,7 @@ const HeroContainer = ({socialLinks, hero}: IProps) => {
         <div className="socials">
           {
             socialLinks.map((socialLink, i) => (
-              <SocialLink key={`sociallink${i}`} socialLink={socialLink} i={i} />
+              <SocialLink key={`sociallink${i}`} socialLink={socialLink} />
             ))
           }
         </div>

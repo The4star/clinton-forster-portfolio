@@ -60,9 +60,38 @@ li {
   }
 }
 
+.button-general {
+  color:  $periwinkle;
+  background-color: $airforce-blue;
+  font-family: 'Rubik', sans-serif;
+  font-size: 24px;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  transition: .8s;
 
+  &.resume {
+    margin-top: 30px;
+  }
+}
+
+.button-menu {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: 'Nunito', sans-serif;
+  color: $periwinkle;
+  font-size: 30px;
+}
 
 .portlink {
   text-decoration: none;
   color: $airforce-blue;
+}
+
+#periwinkle-h1 {
+  color: $periwinkle;
+  margin-top: 10px;
 }
