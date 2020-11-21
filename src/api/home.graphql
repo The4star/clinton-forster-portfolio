@@ -25,5 +25,25 @@ query {
         }
       }
     }
+    allAbout(skip: 0, take: 20){
+      nodes {
+        id
+        aboutContent
+        aboutProfilePhoto{
+          url
+        }
+        resumeLink
+      }
+    }
+    allAttribute(skip: 0, take: 20){
+      nodes{
+        id
+        attributeFor
+        attributeTitle
+        attributeImage{
+          url
+        }
+      }
+    }
   }
 }

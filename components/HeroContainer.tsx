@@ -11,7 +11,12 @@ const HeroContainer = ({socialLinks, hero}: IProps) => {
   return (
     <div className="video-container">
       <div className="video-container__colour-overlay"></div>
-      <video className="video-container__video-hero" src={hero.media.url} autoPlay muted loop></video>
+      {
+        hero.media.type === "video" ?
+        <video className="video-container__video-hero" src={hero.media.url} autoPlay muted loop></video>
+        :
+        <img id="hero" src={hero.media.url} alt={hero.title}></img>
+      }
       <div className="video-container__text">
         <h1>{hero.title}</h1>
         {
@@ -22,7 +27,7 @@ const HeroContainer = ({socialLinks, hero}: IProps) => {
         <div className="socials">
           {
             socialLinks.map((socialLink, i) => (
-              <SocialLink key={`sociallink${i}`} socialLink={socialLink} i={i} />
+              <SocialLink key={`sociallink${i}`} socialLink={socialLink} />
             ))
           }
         </div>

@@ -1,0 +1,64 @@
+.about-me-container {
+  margin:20px;
+  width: 80%;
+  max-height: 1500px;
+  background: rgba(202, 223, 250, 0.8);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: .8s;
+
+  &:hover{
+    box-shadow: 2px 2px 4px black;
+    background: rgba(183, 213, 252, 0.8);
+    transition: .8s;
+  }
+
+  a {
+    color: $cerulean-blue;
+  }
+
+  #about-me {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 20px;
+  }
+
+  .profile-photo-container {
+    margin: 20px;
+    max-width: 30%;
+    max-height: 80%;
+
+    @include respond-until(wide) {
+      max-width: 50%;
+    }
+
+    &__photo {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+  }
+
+  &__text-container {
+    margin: 20px;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+

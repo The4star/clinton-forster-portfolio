@@ -1,0 +1,39 @@
+.attribute-container {
+  margin: 20px;
+  width: 80%;
+  max-height: 1600px;
+  background: rgba(202, 223, 250, 0.8);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+  grid-template-rows: repeat(auto-fit, 200px);
+  grid-gap: 5px;
+  padding: 20px;
+  transition: .8s;
+
+  &__attribute {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+
+    &:hover img {
+      filter: grayscale(0%);
+      opacity: 1;
+      transition: .5s;
+    }
+
+    img {
+      width: 70%;
+      height: auto;
+      opacity: .7;
+      filter: grayscale(100%);
+    }
+  }
+
+
+}
+
+
+
+
