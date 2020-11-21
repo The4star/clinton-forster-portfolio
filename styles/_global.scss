@@ -60,7 +60,7 @@ li {
   }
 }
 
-button {
+.button-general {
   color:  $periwinkle;
   background-color: $airforce-blue;
   font-family: 'Rubik', sans-serif;
@@ -75,6 +75,15 @@ button {
   &.resume {
     margin-top: 30px;
   }
+}
+
+.button-menu {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: 'Nunito', sans-serif;
+  color: $periwinkle;
+  font-size: 30px;
 }
 
 .portlink {

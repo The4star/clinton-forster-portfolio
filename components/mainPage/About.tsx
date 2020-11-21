@@ -15,7 +15,7 @@ const About = ({aboutContent}: IProps) => {
         <h2 id="about-me">About Me</h2>
         {ReactHtmlParser(aboutContent.content)}
         <a href={aboutContent.resumeLink}
-          target="_blank"><button className="resume">Download My Resume</button></a>
+          target="_blank"><button className="button-general resume">Download My Resume</button></a>
       </div>
     </div>
   )

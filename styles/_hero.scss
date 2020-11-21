@@ -1,4 +1,4 @@
-.video-container {
+.hero-container {
   position: relative;
   width: 100%;
   max-height: 800px;
@@ -13,6 +13,15 @@
     width: 100%;
     align-self: baseline;
     z-index: 0;
+  }
+
+  &__image-hero {
+    display: inline;
+    width: 100%;
+    min-height: 400px;
+    object-fit: cover;
+    object-position: 80% 50%;
+
   }
 
   &__colour-overlay {
@@ -40,7 +49,6 @@
       justify-content: space-around;
 
       @include social-logo;
-
     }
   }
 }

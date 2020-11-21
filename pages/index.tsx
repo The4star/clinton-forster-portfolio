@@ -1,12 +1,11 @@
 import React from "react";
-import Head from 'next/head'
 import Layout from "../components/Layout";
 import { client } from "../src/pokko";
 import { ILogo, ISocialLink } from "../types/navAndFooter.types";
 import { IHero } from "../types/hero.types";
 import { IAbout, IAttribute } from "../types/indexPage.types";
 import About from "../components/mainPage/About";
-import WorkedWith from "../components/mainPage/WorkedWith";
+import AttributeContainer from "../components/mainPage/AttributeContainer";
 
 const query = require("../src/api/home.graphql");
 
@@ -16,8 +15,9 @@ interface IProps {
   socialLinks: ISocialLink[];
   about: IAbout
   workedWith: IAttribute[];
+  skills: IAttribute[];
 }
-const Home = ({logo, hero, socialLinks, about, workedWith}:IProps) => {
+const Home = ({logo, hero, socialLinks, about, workedWith, skills}:IProps) => {
   return (
     <Layout 
       logo={logo}
@@ -25,7 +25,8 @@ const Home = ({logo, hero, socialLinks, about, workedWith}:IProps) => {
       socialLinks={socialLinks}
     >
       <About aboutContent={about} />
-      <WorkedWith attributes={workedWith} />
+      <AttributeContainer header="Companies I've worked with" attributes={workedWith} />
+      <AttributeContainer header="My Skills" attributes={skills} skills/>
     </Layout>
   )
 }
@@ -46,7 +47,7 @@ export async function getStaticProps() {
     return { props: {} };
   }
 
-  const aboutData = data.allAbout.nodes[0] 
+  const aboutData = data.allAbout.nodes[0];
   
   const props:IProps = {
     logo: data.logo,
@@ -78,8 +79,18 @@ export async function getStaticProps() {
         title: attribute.attributeTitle,
         image: attribute.attributeImage.url
       }
+    }),
+    skills: data.allAttribute.nodes.filter(node => {
+      return node.attributeFor === "Skills"
     })
-
+    .sort((a , b) => parseInt(a.attributeOrder) < parseInt(b.attributeOrder) ? -1 : 1)
+    .map(attribute => {
+      return {
+        title: attribute.attributeTitle,
+        image: attribute.attributeImage.url
+      }
+    })
+    
   }
   
   return {

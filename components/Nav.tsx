@@ -1,12 +1,25 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import React from 'react'
-import { ILogo } from '../types/navAndFooter.types'
+import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { ILogo } from '../types/navAndFooter.types';
+import { scrollToSkills } from '../helpers/general';
 
 interface IProps {
   logo: ILogo
 }
+
 const Nav = ({logo}: IProps) => {
+  const router = useRouter()
+  const navigateToSkills = async () => {
+    const skills = document.getElementById("skills");
+    if (skills) {
+      scrollToSkills()
+    } else {
+      await router.push('/')
+      scrollToSkills();
+    }
+  }
+
   return (
     <header>
     <div className="navbar-wrapper">
@@ -17,7 +30,7 @@ const Nav = ({logo}: IProps) => {
         <ul>
         <li><Link href="/">Main</Link></li>
         <li><Link href="/portfolio">Portfolio</Link></li>
-        <li><Link href="/#skills">Skills</Link></li>
+        <li><button className="button-menu" onClick={navigateToSkills}>Skills</button></li>
         <li><Link href="/contact">Contact</Link></li>
         </ul>
       </nav>
