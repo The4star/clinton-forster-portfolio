@@ -21,8 +21,16 @@ footer {
     margin-bottom: 10px;
     margin-top: 10px;
 
+    @include respond-until(tablet) {
+      justify-content: center;
+    }
+
     &__nav {
       width: 50%;
+
+      @include respond-until(tablet) {
+        width: 90%;
+      }
     }
 
     #copyright {

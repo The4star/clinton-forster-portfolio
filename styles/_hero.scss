@@ -13,6 +13,22 @@
     width: 100%;
     align-self: baseline;
     z-index: 0;
+
+    @include respond-until(tablet) {
+      display: none
+    }
+  }
+
+  &__mobile-hero {
+    display: none;
+
+    @include respond-until(tablet) {
+      display: inline;
+      width: 100%;
+      min-height: 400px;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
   }
 
   &__image-hero {
@@ -21,7 +37,6 @@
     min-height: 400px;
     object-fit: cover;
     object-position: 80% 50%;
-
   }
 
   &__colour-overlay {

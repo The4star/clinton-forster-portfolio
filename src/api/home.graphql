@@ -28,6 +28,9 @@ query {
             heroMedia {
               url
             }
+            mobileHero{
+              url
+            }
           }
         }
         about {
