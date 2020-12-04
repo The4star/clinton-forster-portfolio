@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactPlayer from 'react-player'
 import { IHero } from '../types/hero.types'
 import { ISocialLink } from '../types/navAndFooter.types'
 import SocialLink from './SocialLink'
@@ -13,7 +14,7 @@ const HeroContainer = ({socialLinks, hero}: IProps) => {
       <div className="hero-container__colour-overlay"></div>
       {
         hero.media.type === "video" ?
-        <video className="hero-container__video-hero" src={hero.media.url} autoPlay muted loop></video>
+        <ReactPlayer className="hero-container__video-hero" url={hero.media.url} playing muted loop></ReactPlayer>
         :
         <img className="hero-container__image-hero" src={hero.media.url} alt={hero.title}></img>
       }
