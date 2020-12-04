@@ -11,7 +11,8 @@
 
   &__video-hero {
     display: none;
-    width: 100%;
+    width: 100% !important;
+    height: auto !important;
     align-self: baseline;
     z-index: 0;
 
