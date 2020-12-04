@@ -14,7 +14,7 @@ const HeroContainer = ({socialLinks, hero}: IProps) => {
       <div className="hero-container__colour-overlay"></div>
       {
         hero.media.type === "video" ?
-        <ReactPlayer className="hero-container__video-hero" url={hero.media.url} playing muted loop></ReactPlayer>
+        <ReactPlayer className="hero-container__video-hero" url={hero.media.url} playing={typeof window !== 'undefined' && window.screen.width < 768 ? false : true } muted loop></ReactPlayer>
         :
         <img className="hero-container__image-hero" src={hero.media.url} alt={hero.title}></img>
       }
