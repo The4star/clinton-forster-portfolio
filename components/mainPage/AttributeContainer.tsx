@@ -8,6 +8,8 @@ interface iProps {
   skills?: boolean;
 }
 const AttributeContainer = ({header,  attributes, skills }:iProps) => {  
+  console.log(attributes);
+  
   return (
     <>
     <h1 id="periwinkle-h1">{header}</h1>

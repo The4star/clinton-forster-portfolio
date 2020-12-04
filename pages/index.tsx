@@ -6,6 +6,7 @@ import { IHero } from "../types/hero.types";
 import { IAbout, IAttribute } from "../types/indexPage.types";
 import About from "../components/mainPage/About";
 import AttributeContainer from "../components/mainPage/AttributeContainer";
+import { title } from "process";
 
 const query = require("../src/api/home.graphql");
 
@@ -47,16 +48,17 @@ export async function getStaticProps() {
     return { props: {} };
   }
 
-  const aboutData = data.allAbout.nodes[0];
   
+  const homePageData = data.allHome.nodes[0];
+
   const props:IProps = {
     logo: data.logo,
     hero: {
-      title: data.hero.heroTitle,
-      subtitle: data.hero.heroSubtitle,
+      title: homePageData.hero.heroTitle,
+      subtitle: homePageData.hero.heroSubtitle,
       media: {
         type: "video",
-        url: data.hero.heroMedia.url
+        url: homePageData.hero.heroMedia.url
       }
     },
     socialLinks: data.allSocialLinks.nodes.map(node => {
@@ -67,30 +69,22 @@ export async function getStaticProps() {
       }
     }),
     about: {
-      content: aboutData.aboutContent,
-      profilePhoto: aboutData.aboutProfilePhoto.url,
-      resumeLink: aboutData.resumeLink
+      content: homePageData.about.aboutContent,
+      profilePhoto: homePageData.about.aboutProfilePhoto.url,
+      resumeLink: homePageData.about.resumeLink
     },
-    workedWith: data.allAttribute.nodes.filter(node => {
-      return node.attributeFor === "workedWith"
-    })
-    .map(attribute => {
+    workedWith: homePageData.clients.map(client => {
       return {
-        title: attribute.attributeTitle,
-        image: attribute.attributeImage.url
-      }
-    }),
-    skills: data.allAttribute.nodes.filter(node => {
-      return node.attributeFor === "Skills"
-    })
-    .sort((a , b) => parseInt(a.attributeOrder) < parseInt(b.attributeOrder) ? -1 : 1)
-    .map(attribute => {
+      title: client.attributeTitle,
+      image: client.attributeImage.url
+    }
+  }),
+    skills: homePageData.skills.map(skill => {
       return {
-        title: attribute.attributeTitle,
-        image: attribute.attributeImage.url
-      }
-    })
-    
+      title: skill.attributeTitle,
+      image: skill.attributeImage.url
+    }
+  }),
   }
   
   return {
