@@ -36,6 +36,7 @@ query {
         about {
           __typename
           ...on About {
+            id
             aboutContent
             aboutProfilePhoto{
               url
@@ -46,6 +47,7 @@ query {
         clients {
           __typename
           ...on Attribute {
+            id
             attributeTitle
             attributeImage {
               url
@@ -55,6 +57,7 @@ query {
         skills {
           __typename
           ...on Attribute {
+            id
             attributeTitle
             attributeImage{
               url

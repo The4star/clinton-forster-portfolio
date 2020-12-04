@@ -10,7 +10,8 @@ interface IProps {
 
 const Nav = ({logo}: IProps) => {
   const router = useRouter()
-  const navigateToSkills = async () => {
+  const navigateToSkills = async (event) => {    
+    event.stopPropagation();
     const skills = document.getElementById("skills");
     if (skills) {
       scrollToSkills()
