@@ -1,7 +1,6 @@
 .attribute-container {
   margin: 20px;
-  width: 80%;
-  max-height: 1600px;
+  width: 85%;
   background: rgba(202, 223, 250, 0.8);
   border-radius: 10px;
   display: grid;
@@ -11,16 +10,20 @@
   padding: 20px;
   transition: .8s;
 
+  @include respond-until(tablet) {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 145px));
+    grid-template-rows: repeat(auto-fit, 150px);
+    width: 80%;
+  }
+
   &__attribute {
     display: flex;
     justify-content: center;
     align-items: center;
     transition: .5s;
-
-    &:hover img {
-      filter: grayscale(0%);
-      opacity: 1;
-      transition: .5s;
+    margin: 20px 0;
+    @include respond-until(tablet) {
+      
     }
 
     img {
@@ -28,6 +31,12 @@
       height: auto;
       opacity: .7;
       filter: grayscale(100%);
+      
+      &:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+        transition: .5s;
+      }
     }
   }
 

@@ -7,12 +7,10 @@ interface iProps {
   attributes: IAttribute[]
   skills?: boolean;
 }
-const AttributeContainer = ({header,  attributes, skills }:iProps) => {  
-  console.log(attributes);
-  
+const AttributeContainer = ({header,  attributes, skills }:iProps) => {    
   return (
     <>
-    <h1 id="periwinkle-h1">{header}</h1>
+    <h2 id="periwinkle-h2">{header}</h2>
     <div className="attribute-container" id={skills && "skills"}>
      {
        attributes.map((attribute, i) => {

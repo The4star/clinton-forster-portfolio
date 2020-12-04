@@ -27,8 +27,10 @@ header {
 
     nav {
       width: 50%;
+      @include respond-until(tablet) {
+        width: 90%;
+      }
     }
-
   }
 }
 

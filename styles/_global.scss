@@ -7,6 +7,9 @@ h1 {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: normal;
+  @include respond-until(tablet) {
+    font-size: 30px;
+  }
 }
 
 h2 {
@@ -14,11 +17,17 @@ h2 {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: normal;
+  @include respond-until(tablet) {
+    font-size: 20px;
+  }
 }
 
 p {
   font-family: 'Rubik', sans-serif;
-  font-size: 24px
+  font-size: 24px;
+  @include respond-until(tablet) {
+    font-size: 15px;
+  }
 }
 
 a {
@@ -41,6 +50,9 @@ li {
   color: $periwinkle;
   font-size: 30px;
   transition: .5s;
+  @include respond-until(tablet) {
+    font-size: 16px;
+  }
 
   &:before {
     content: "";
@@ -72,6 +84,10 @@ li {
   cursor: pointer;
   transition: .8s;
 
+  @include respond-until(tablet) {
+    font-size: 16px;
+  }
+
   &.resume {
     margin-top: 30px;
   }
@@ -84,6 +100,10 @@ li {
   font-family: 'Nunito', sans-serif;
   color: $periwinkle;
   font-size: 30px;
+
+  @include respond-until(tablet) {
+    font-size: 16px;
+  }
 }
 
 .portlink {
@@ -91,7 +111,7 @@ li {
   color: $airforce-blue;
 }
 
-#periwinkle-h1 {
+#periwinkle-h2 {
   color: $periwinkle;
   margin-top: 10px;
 }

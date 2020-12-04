@@ -59,6 +59,10 @@ export async function getStaticProps() {
       media: {
         type: "video",
         url: homePageData.hero.heroMedia.url
+      },
+      mobileMedia: {
+        type: "image",
+        url: homePageData.hero.mobileHero.url
       }
     },
     socialLinks: data.allSocialLinks.nodes.map(node => {

@@ -17,6 +17,11 @@ const HeroContainer = ({socialLinks, hero}: IProps) => {
         :
         <img className="hero-container__image-hero" src={hero.media.url} alt={hero.title}></img>
       }
+      {
+        hero.mobileMedia ?
+        <img className="hero-container__mobile-hero" src={hero.mobileMedia.url} alt={hero.title}></img>
+        : null
+      }
       <div className="hero-container__text">
         <h1>{hero.title}</h1>
         {
