@@ -10,12 +10,13 @@
   z-index: 1;
 
   &__video-hero {
+    display: none;
     width: 100%;
     align-self: baseline;
     z-index: 0;
 
-    @include respond-until(tablet) {
-      display: none
+    @include respond-to(tablet) {
+      display: inline;
     }
   }
 
