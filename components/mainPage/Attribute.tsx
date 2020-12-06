@@ -17,12 +17,13 @@ const Attribute = ({ attribute }: IProps) => {
   }
 
   return (
-    <div
-      className="attribute-container__attribute"
-      onMouseEnter={() => toggleTooltip(`tooltip-${attribute.title}`)}
-      onMouseLeave={() => toggleTooltip(`tooltip-${attribute.title}`)}
-    >
-      <img src={attribute.image} alt={attribute.title} />
+    <div className="attribute-container__attribute" >
+      <img 
+        src={attribute.image} 
+        alt={attribute.title} 
+        onMouseEnter={() => toggleTooltip(`tooltip-${attribute.title}`)}
+        onMouseLeave={() => toggleTooltip(`tooltip-${attribute.title}`)}
+      />
       <div id={`tooltip-${attribute.title}`} className="attribute-container__tooltip"
         style={{ display: 'none' }}
       >

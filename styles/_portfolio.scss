@@ -1,0 +1,38 @@
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__header {
+    color: $periwinkle;
+    margin: 20px;
+    text-align: center;
+  }
+
+  .category-menu {
+    margin: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__button {
+      cursor: pointer;
+      border: none;
+      background: none;
+      margin: 20px;
+      font-size: 24px;
+      transition: .8s;
+      white-space: nowrap;
+      color: $periwinkle;
+      font-family: 'Nunito', sans-serif;
+
+      p {
+        position: relative;
+        @include underline
+      }
+      
+    }
+  }
+}
