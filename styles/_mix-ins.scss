@@ -14,3 +14,22 @@
     }
   }
 }
+
+@mixin underline {
+  &:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -1px;
+    left: 0;
+    background-color: $periwinkle;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover::before {
+    visibility: visible;
+    width: 100%;
+  }
+}

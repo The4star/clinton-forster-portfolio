@@ -6,7 +6,6 @@ import { IHero } from "../types/hero.types";
 import { IAbout, IAttribute } from "../types/indexPage.types";
 import About from "../components/mainPage/About";
 import AttributeContainer from "../components/mainPage/AttributeContainer";
-import { title } from "process";
 
 const query = require("../src/api/home.graphql");
 

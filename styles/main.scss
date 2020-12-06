@@ -14,9 +14,12 @@ main {
 @import './variables/colors';
 @import './media-queries';
 @import './mix-ins';
+@import './animation';
+@import './global';
 @import './nav';
 @import './hero';
 @import './about';
 @import './attributes';
-@import './global';
+@import './portfolio';
+
 @import './footer';

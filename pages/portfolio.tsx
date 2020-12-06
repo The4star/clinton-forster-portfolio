@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import { client } from "../src/pokko";
 import { IHero } from "../types/hero.types";
 import { ILogo, ISocialLink } from "../types/navAndFooter.types";
+import Portfolio from '../components/portfolioPage/Portfolio';
 
 const query = require("../src/api/portfolio.graphql");
 
@@ -10,15 +11,18 @@ interface IProps {
   logo: ILogo;
   hero: IHero;
   socialLinks: ISocialLink[];
+  heading: string;
+  categories: string[];
 }
 
-const Portfolio = ({logo, hero, socialLinks }:IProps) => {
+const PortfolioPage = ({logo, hero, socialLinks, heading, categories }:IProps) => {
   return (
     <Layout 
       logo={logo}
       hero={hero}
       socialLinks={socialLinks}
     >
+      <Portfolio heading={heading} categories={categories} />
     </Layout>
   )
 }
@@ -38,6 +42,8 @@ export async function getStaticProps() {
     console.log("**** no data", JSON.stringify(res));
     return { props: {} };
   }
+  
+  const portfolioData = data.allPortfolio.nodes[0];
 
   const props:IProps = {
     logo: data.logo,
@@ -55,7 +61,9 @@ export async function getStaticProps() {
         link: node.socialLink,
         image: node.socialLinkImage.url
       }
-    })    
+    }),
+    heading: portfolioData.heading,   
+    categories: portfolioData.categories
   }
   
   return {
@@ -63,4 +71,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Portfolio;
+export default PortfolioPage;

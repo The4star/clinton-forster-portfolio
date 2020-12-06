@@ -25,5 +25,12 @@ query {
         }
       }
     }
+    allPortfolio(skip: 0 take: 1){
+      nodes{
+        __typename
+        heading
+        categories
+      }
+    }
   }
 }
