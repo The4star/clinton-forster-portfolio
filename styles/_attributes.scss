@@ -4,7 +4,7 @@
   background: rgba(202, 223, 250, 0.8);
   border-radius: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 190px));
   grid-template-rows: repeat(auto-fit, 200px);
   grid-gap: 5px;
   padding: 20px;
@@ -17,14 +17,13 @@
   }
 
   &__attribute {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: .5s;
     margin: 20px 0;
-    @include respond-until(tablet) {
-      
-    }
+
 
     img {
       width: 70%;
@@ -40,6 +39,17 @@
     }
   }
 
+  &__tooltip {
+    position: absolute;
+    bottom: -60px;
+    padding: 10px;
+    background-color: $maastricht-blue;
+    color: white;
+    border-radius: 5px;
+    z-index: 100;
+    opacity: .7;
+    animation: fade-tooltip .5s ease-in-out;
+  }
 
 }
 
