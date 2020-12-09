@@ -29,7 +29,36 @@ query {
       nodes{
         __typename
         heading
-        categories
+        portfolioCategories{
+          __typename
+          ... on PortfolioCategory{
+            id
+            title
+            pieces{
+              __typename
+              ... on PortfolioPiece{
+                id
+                title
+                techStack{
+                  __typename
+                  ...on Technology{
+                    id
+                    title
+                    logo{
+                      url
+                    }
+                  }
+                }
+                body
+                links
+                viewLink
+                thumbnail{
+                  url
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

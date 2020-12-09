@@ -22,6 +22,16 @@ h2 {
   }
 }
 
+h3 {
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  @include respond-until(tablet) {
+    font-size: 20px;
+  }
+}
+
 p {
   font-family: 'Rubik', sans-serif;
   font-size: 24px;

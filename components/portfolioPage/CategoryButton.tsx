@@ -1,12 +1,15 @@
 import React from 'react'
+import { IPortfolioCategory, IPortfolioPiece } from '../../types/portfolio.types'
 
 interface IProps {
-  category: string
+  category: IPortfolioCategory;
+  setPortfolioPieces: (pieces: IPortfolioPiece[]) => void;
 }
-const CategoryButton = ({category}: IProps) => {
+const CategoryButton = ({category, setPortfolioPieces}: IProps) => {
+
   return (
-    <button className="category-menu__button">
-      <p>{category}</p>
+    <button className="category-menu__button" onClick={() => setPortfolioPieces(category.pieces)}>
+      <p>{category.title}</p>
     </button>
   )
 }
