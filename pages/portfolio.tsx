@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/Layout";
 import { client } from "../src/pokko";
 import { IHero } from "../types/hero.types";
 import { ILogo, ISocialLink } from "../types/navAndFooter.types";
-import Portfolio from '../components/portfolioPage/Portfolio';
+import PortfolioContainer from '../components/portfolioPage/PortfolioContainer';
+import { IPortfolioCategory, IPortfolioPiece } from "../types/portfolio.types";
 
 const query = require("../src/api/portfolio.graphql");
 
@@ -12,17 +13,24 @@ interface IProps {
   hero: IHero;
   socialLinks: ISocialLink[];
   heading: string;
-  categories: string[];
+  categories: IPortfolioCategory[];
 }
 
 const PortfolioPage = ({logo, hero, socialLinks, heading, categories }:IProps) => {
+  const [ portfolioPieces, setPortfolioPieces ] = useState<IPortfolioPiece[] | []>([]); 
+
   return (
     <Layout 
       logo={logo}
       hero={hero}
       socialLinks={socialLinks}
     >
-      <Portfolio heading={heading} categories={categories} />
+      <PortfolioContainer 
+        heading={heading} 
+        categories={categories} 
+        portfolioPieces={portfolioPieces} 
+        setPortfolioPieces={setPortfolioPieces}
+      />
     </Layout>
   )
 }
@@ -63,7 +71,7 @@ export async function getStaticProps() {
       }
     }),
     heading: portfolioData.heading,   
-    categories: portfolioData.categories
+    categories: portfolioData.portfolioCategories
   }
   
   return {
