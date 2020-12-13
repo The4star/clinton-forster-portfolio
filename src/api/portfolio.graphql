@@ -50,10 +50,22 @@ query {
                   }
                 }
                 body
-                links
+                links{
+                  __typename
+                  ... on Link{
+                    text
+                    url
+                  }
+                }
                 viewLink
                 thumbnail{
                   url
+                }
+                images{
+                  __typename
+                  ... on PokMedia{
+                    url
+                  }
                 }
               }
             }
