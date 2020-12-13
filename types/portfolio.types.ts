@@ -11,9 +11,15 @@ export interface IPortfolioPiece {
   title:      string;
   techStack:  ITechStack[];
   body:       string;
-  links:      string[];
+  links:      ILink[];
   viewLink:   string;
   thumbnail:  IImage;
+  images: IImage[];
+}
+
+interface ILink {
+  text: string;
+  url: string;
 }
 
 export interface ITechStack {
@@ -21,6 +27,7 @@ export interface ITechStack {
   logo: IImage;
 }
 
-interface IImage {
+export interface IImage {
+  __typename?: string
   url: string
 }

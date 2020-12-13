@@ -3,6 +3,8 @@ import { AppProps } from "next/dist/next-server/lib/router/router";
 import Head from "next/head";
 
 import "../styles/main.scss";
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
