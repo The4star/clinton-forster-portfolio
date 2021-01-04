@@ -23,16 +23,15 @@
       background: none;
       margin: 20px;
       font-size: 24px;
-      transition: .8s;
+      transition: 0.8s;
       white-space: nowrap;
       color: $periwinkle;
-      font-family: 'Nunito', sans-serif;
+      font-family: "Nunito", sans-serif;
 
       p {
         position: relative;
-        @include underline
+        @include underline;
       }
-      
     }
   }
 
@@ -44,7 +43,7 @@
     grid-gap: 50px;
     padding: 20px;
     animation: appear 2s;
-    transition: .8s;
+    transition: 0.8s;
 
     @include respond-until(tablet) {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -65,7 +64,7 @@
       &:hover {
         box-shadow: 2px 2px 4px black;
         background: rgba(190, 218, 255, 0.8);
-        transition: .8s;
+        transition: 0.8s;
       }
 
       h3 {
@@ -106,7 +105,6 @@
             height: auto;
             margin: 0 5px;
           }
-
         }
       }
       .portfolio-piece-modal {
@@ -119,7 +117,7 @@
         align-items: center;
         justify-content: center;
         z-index: 105;
-        animation: appear .3s ease-in-out;
+        animation: appear 0.3s ease-in-out;
 
         &__background {
           position: fixed;
@@ -137,7 +135,7 @@
           align-items: center;
           background-color: rgba(202, 223, 250, 1);
           width: 70%;
-          max-height: 70%;
+          max-height: 80vh;
           padding: 20px;
           z-index: 107;
           border-radius: 10px;
@@ -145,8 +143,8 @@
           @include respond-until(tablet) {
             width: 75%;
             flex-direction: column;
-            justify-content: center;
-            padding: 40px 20px;
+            justify-content: space-around;
+            padding: 40px 20px 20px 20px;
           }
 
           h2 {
@@ -160,14 +158,18 @@
 
           .portfolio-piece-image-section {
             width: 50%;
-
+            max-height: 68vh;
             @include respond-until(tablet) {
-              width: 100%;
+              width: 95%;
             }
-            
+
             &__thumbnail {
               width: 90%;
               border-radius: 10px;
+
+              @include respond-to(wide) {
+                width: 75%;
+              }
             }
           }
 
@@ -175,7 +177,10 @@
             display: flex;
             flex-direction: column;
             width: 50%;
+            max-height: 68vh !important;
             padding: 0 20px;
+            overflow-y: auto;
+            margin-top: 10px;
             @include respond-until(tablet) {
               width: 100%;
             }
@@ -192,19 +197,17 @@
           cursor: pointer;
           position: absolute;
           right: 15px;
-          top:15px;
+          top: 15px;
           background: none;
           border: none;
-          transition: .3s;
+          transition: 0.3s;
 
           &:hover {
             transform: scale(1.1);
-            transition: .3s
+            transition: 0.3s;
           }
         }
-
       }
-
     }
   }
 }
