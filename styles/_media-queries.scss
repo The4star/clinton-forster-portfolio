@@ -1,4 +1,7 @@
 @mixin respond-to($media) {
+  @if $media == very-wide {
+    @media only screen and (min-width: $very-wide) { @content; }
+  }
   @if $media == wide {
     @media only screen and (min-width: $wide) { @content; }
   }
@@ -14,6 +17,9 @@
 }
 
 @mixin respond-until($media) {
+  @if $media == very-wide {
+    @media only screen and (min-width: $very-wide) { @content; }
+  }
   @if $media == wide {
     @media only screen and (max-width: $wide) { @content; }
   }

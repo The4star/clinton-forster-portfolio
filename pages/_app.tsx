@@ -5,6 +5,7 @@ import Head from "next/head";
 import "../styles/main.scss";
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
@@ -18,7 +19,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           rel="icon"
           href="favicon.ico"
         />
-         <title>Clinton Forster Portfolio</title>
+        <title>Clinton Forster Portfolio</title>
       </Head>
       <Component {...pageProps} />
     </>
