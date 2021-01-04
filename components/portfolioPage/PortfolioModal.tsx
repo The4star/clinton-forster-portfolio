@@ -27,39 +27,39 @@ const PortfolioModal = ({ id, portfolioPiece, showSwiper }: IProps) => {
               <img className="portfolio-piece-image-section__thumbnail" src={portfolioPiece.thumbnail.url} alt="" />
           }
         </div>
-        < className="portfolio-piece-information">
+        <div className="portfolio-piece-information">
           <h2>{portfolioPiece.title}</h2>
-        {
-          portfolioPiece.techStack.length ?
-            <>
-              <h3>Tech Stack</h3>
-              <div className="tech-stack-area">
-                {
-                  portfolioPiece.techStack.map((tech, techIndex) => (
-                    <TechStack key={`tech-${techIndex}`} tech={tech} />
-                  ))
-                }
-              </div>
-            </>
-            : null
-        }
-        <p>{ReactHtmlParser(portfolioPiece.body)}</p>
-        <div className="portfolio-piece-information__links">
           {
-            portfolioPiece.links.length ? portfolioPiece.links.map((link, i) => (
-              <a key={`portlink-${i}`} className="portlink" href={link.url} target="_blank" rel="noopener noreferrer">{link.text}</a>
-            ))
+            portfolioPiece.techStack.length ?
+              <>
+                <h3>Tech Stack</h3>
+                <div className="tech-stack-area">
+                  {
+                    portfolioPiece.techStack.map((tech, techIndex) => (
+                      <TechStack key={`tech-${techIndex}`} tech={tech} />
+                    ))
+                  }
+                </div>
+              </>
+              : null
+          }
+          <p>{ReactHtmlParser(portfolioPiece.body)}</p>
+          <div className="portfolio-piece-information__links">
+            {
+              portfolioPiece.links.length ? portfolioPiece.links.map((link, i) => (
+                <a key={`portlink-${i}`} className="portlink" href={link.url} target="_blank" rel="noopener noreferrer">{link.text}</a>
+              ))
+                : null
+            }
+          </div>
+          {
+            portfolioPiece.viewLink ?
+              <a href={portfolioPiece.viewLink} target="_blank" rel="noopener noreferrer"><button className="button-general">View</button></a>
               : null
           }
         </div>
-        {
-          portfolioPiece.viewLink ?
-            <a href={portfolioPiece.viewLink} target="_blank" rel="noopener noreferrer"><button className="button-general">View</button></a>
-            : null
-        }
       </div>
     </div>
-    </div >
   )
 }
 
