@@ -42,7 +42,6 @@ const PortfolioModal = ({ id, portfolioPiece, showSwiper }: IProps) => {
                 </div>
               </>
               : null
-
           }
           <p>{ReactHtmlParser(portfolioPiece.body)}</p>
           <div className="portfolio-piece-information__links">

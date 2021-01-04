@@ -93,7 +93,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 0 10px 0;
+        margin-bottom: 10px;
         flex-wrap: wrap;
 
         .tech-stack {
@@ -136,7 +136,7 @@
           background-color: rgba(202, 223, 250, 1);
           width: 70%;
           max-height: 80vh;
-          padding: 20px;
+          padding: 30px 20px 20px 20px;
           z-index: 107;
           border-radius: 10px;
 
@@ -174,15 +174,16 @@
           }
 
           .portfolio-piece-information {
-            display: flex;
-            flex-direction: column;
             width: 50%;
-            max-height: 68vh !important;
             padding: 0 20px;
             overflow-y: auto;
             margin-top: 10px;
             @include respond-until(tablet) {
               width: 100%;
+            }
+
+            @include respond-to(tablet) {
+              max-height: 68vh !important;
             }
 
             &__links {
