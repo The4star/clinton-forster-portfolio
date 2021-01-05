@@ -1,0 +1,107 @@
+.form-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 105;
+  animation: appear 0.3s ease-in-out;
+
+  &__background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    z-index: 106;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 25vw;
+    background-color: rgba(202, 223, 250, 1);
+    max-height: 80vh;
+    padding: 30px 20px 20px 20px;
+    z-index: 107;
+    border-radius: 10px;
+
+    @include respond-until(tablet) {
+      max-width: 65vw;
+      padding: 40px 20px 20px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__close-button {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background: none;
+    border: none;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.3s;
+    }
+  }
+  &__label {
+    margin: 10px 0;
+  }
+  &__input {
+    border: none;
+    background: none;
+    border-bottom: 1px solid $maastricht-blue;
+  }
+
+  &__select {
+    border: 2px solid $maastricht-blue;
+    font-size: 24px;
+    padding: 5px;
+    border-radius: 5px;
+    background: none;
+    @include respond-until(tablet) {
+      font-size: 15px;
+    }
+  }
+
+  &__text-area {
+    background: none;
+    border: 2px solid $maastricht-blue;
+    border-radius: 5px;
+    height: 200px;
+    margin-bottom: 20px;
+    padding: 5px;
+  }
+
+  &__validation {
+    width: 80%;
+    p {
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
