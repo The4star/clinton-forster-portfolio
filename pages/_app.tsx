@@ -20,6 +20,10 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           href="favicon.ico"
         />
         <title>Clinton Forster Portfolio</title>
+        <meta name="description" content="Clinton Forster is a Full Stack Developer with a passion for creating all forms of applications with special interest in React and Typescript." />
+        <meta property="og:title" content="Clinton Forster Portfolio" key="ogtitle" />
+        <meta property="og:description" content="Clinton Forster is a Full Stack Developer with a passion for creating all forms of applications with special interest in React and Typescript." key="ogdesc" />
+        <meta property="og:image" content="https://cdn.pokko.io/66dac2b2-a989-482f-9032-5d3ad3b607aa/a10b0eb4-85c9-4539-a428-03baa4c41250" key="ogimage" />
       </Head>
       <Component {...pageProps} />
     </>
