@@ -4,10 +4,10 @@ import { useRouter } from 'next/router';
 import { FooterProps } from '../types/navAndFooter.types';
 import SocialLink from './SocialLink';
 import { scrollToSkills } from '../helpers/general';
-
+import pokko from '../svg/pokko.svg';
 const Footer = ({
   socialLinks
-}:FooterProps) => {  
+}: FooterProps) => {
   const router = useRouter()
   const navigateToSkills = async () => {
     const skills = document.getElementById("skills");
@@ -20,7 +20,7 @@ const Footer = ({
   }
   return (
     <footer>
-      
+
       <div className="socials">
         {
           socialLinks.map((socialLink, i) => (
@@ -37,7 +37,13 @@ const Footer = ({
             <li><Link href="/contact">Contact</Link></li>
           </ul>
         </div>
-      <p id="copyright"> &copy; Clinton Forster {new Date().getFullYear()}</p>
+        <p className="footer-nav-menu__text">
+          My content is powered by Pokko  &nbsp;
+          <a href="https://www.pokko.io" target="_blank" rel="noopener nofollow">
+            <img className="pokko" src="https://cdn.pokko.io/p/pokko-512w-trans.png" alt="pokko" />
+          </a>
+        </p>
+        <p className="footer-nav-menu__text"> &copy; Clinton Forster {new Date().getFullYear()}</p>
       </div>
     </footer>
   )

@@ -4,7 +4,7 @@ footer {
   flex-direction: column;
   justify-content: space-around;
   background-color: $maastricht-blue;
-  
+
   .socials {
     display: flex;
     justify-content: center;
@@ -15,7 +15,7 @@ footer {
 
   .footer-nav-menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 10px;
@@ -33,14 +33,23 @@ footer {
       }
     }
 
-    #copyright {
+    &__text {
+      display: flex;
+      align-items: center;
       color: $periwinkle;
-      margin: 20px;
+      margin: 10px;
+
+      .pokko {
+        width: 30px;
+        height: auto;
+        background-color: $periwinkle;
+        border-radius: 100%;
+
+        @include respond-until(tablet) {
+          width: 20px;
+          height: auto;
+        }
+      }
     }
   }
-  
-  
 }
-
-
-
