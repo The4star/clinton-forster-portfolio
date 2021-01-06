@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FooterProps } from '../types/navAndFooter.types';
 import SocialLink from './SocialLink';
-import { scrollToSkills } from '../helpers/general';
+import { scrollToSkills, toggleModal } from '../helpers/general';
 import pokko from '../svg/pokko.svg';
 const Footer = ({
   socialLinks
@@ -34,7 +34,7 @@ const Footer = ({
             <li><Link href="/">Main</Link></li>
             <li><Link href="/portfolio">Portfolio</Link></li>
             <li><button className="button-menu" onClick={navigateToSkills}>Skills</button></li>
-            <li><Link href="/contact">Contact</Link></li>
+            <li><button className="button-menu" onClick={() => toggleModal('form-modal')}>Contact</button></li>
           </ul>
         </div>
         <p className="footer-nav-menu__text">
