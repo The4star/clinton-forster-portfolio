@@ -10,7 +10,7 @@ interface IProps {
 
 const PortfolioPiece = ({ portfolioPiece }: IProps) => {
   const [showSwiper, setShowSwiper] = useState<boolean>(false);
-  const modalID = portfolioPiece.title.replace(/ /g, "-").replace(/'/g, "").toLowerCase();
+  const modalID = portfolioPiece.title.replace(/ /g, "-").replace(/'/g, "").replace(/\(/g, "").replace(/\)/g, "").toLowerCase();
 
   const activateModalAndSwiper = () => {
     toggleModal(`${modalID}-modal`);
