@@ -52,7 +52,7 @@ export async function getStaticProps() {
   }
   
   const portfolioData = data.allPortfolio.nodes[0];
-
+  
   const props:IProps = {
     logo: data.logo,
     hero: {
