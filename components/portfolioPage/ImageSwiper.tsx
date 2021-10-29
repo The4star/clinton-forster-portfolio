@@ -2,6 +2,7 @@ import React from 'react'
 import SwiperCore, { Navigation, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { IImage } from '../../types/portfolio.types';
+import Image from 'next/image'
 
 SwiperCore.use([Navigation, Autoplay]);
 
@@ -19,7 +20,12 @@ const ImageSwiper = ({ images }: IProps) => {
       {
         images.map((image, i) => (
           <SwiperSlide key={`swiper-image-${image.url}`}>
-            <img src={image.url} alt={`swiper-image`} />
+            <Image 
+              src={image.url} 
+              alt={`swiper-image`} 
+              layout='fill'
+              objectFit='contain'
+            />
           </SwiperSlide>
         ))
       }

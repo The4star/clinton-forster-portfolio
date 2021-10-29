@@ -5,7 +5,7 @@ import { IPortfolioPiece } from '../../types/portfolio.types';
 import closeIcon from '../../svg/closeIcon.svg';
 import ImageSwiper from './ImageSwiper';
 import TechStack from './TechStack';
-
+import Image from 'next/image'
 interface IProps {
   id: string;
   portfolioPiece: IPortfolioPiece;
@@ -13,7 +13,6 @@ interface IProps {
 }
 
 const PortfolioModal = ({ id, portfolioPiece, showSwiper }: IProps) => {
-
   return (
     <div id={id} className="portfolio-piece-modal" style={{ display: "none" }}>
       <div className="portfolio-piece-modal__background" onClick={() => toggleModal(id)} ></div>
@@ -21,10 +20,15 @@ const PortfolioModal = ({ id, portfolioPiece, showSwiper }: IProps) => {
         <button className="portfolio-piece-modal__close-button" onClick={() => toggleModal(id)}><img src={closeIcon} alt="close-button" /></button>
         <div className="portfolio-piece-image-section">
           {
-            portfolioPiece.images.length && showSwiper ?
+            portfolioPiece.images.length > 1 && showSwiper ?
               <ImageSwiper key={`image-swiper-${id}`} images={portfolioPiece.images} />
-              : !portfolioPiece.images.length &&
-              <img className="portfolio-piece-image-section__thumbnail" src={portfolioPiece.thumbnail.url} alt="" />
+              : 
+              <Image 
+                className="portfolio-piece-image-section__thumbnail" 
+                src={portfolioPiece.thumbnail.url} alt="" 
+                layout='fill'
+                objectFit='contain'
+              />
           }
         </div>
         <div className="portfolio-piece-information">
