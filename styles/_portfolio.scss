@@ -72,6 +72,7 @@
       }
 
       &__image-wrapper {
+        position: relative;
         height: 225px;
         width: 90%;
         overflow: hidden;
@@ -83,9 +84,7 @@
         margin: 20px 0px;
 
         img {
-          height: 100%;
-          width: auto;
-          border-radius: 10px;
+          border-radius: 10px !important;
         }
       }
 
@@ -134,7 +133,7 @@
           display: flex;
           align-items: center;
           background-color: rgba(202, 223, 250, 1);
-          width: 70%;
+          width: 90%;
           max-height: 80vh;
           padding: 30px 20px 20px 20px;
           z-index: 107;
@@ -157,12 +156,13 @@
           }
 
           .portfolio-piece-image-section {
+            position: relative;
             width: 50%;
-            max-height: 68vh;
+            height: 500px;
             @include respond-until(tablet) {
               width: 95%;
             }
-
+            
             &__thumbnail {
               width: 90%;
               border-radius: 10px;

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { toggleModal } from '../../helpers/general';
 import { IPortfolioPiece } from '../../types/portfolio.types';
 import PortfolioModal from './PortfolioModal';
+import Image from 'next/image'
 import TechStack from './TechStack';
 
 interface IProps {
@@ -22,7 +23,12 @@ const PortfolioPiece = ({ portfolioPiece }: IProps) => {
   return (
     <div className="portfolio-piece">
       <div className="portfolio-piece__image-wrapper">
-        <img src={portfolioPiece.thumbnail.url} alt={`${portfolioPiece.title}-thumbnail`} />
+        <Image 
+          src={portfolioPiece.thumbnail.url} 
+          alt={`${portfolioPiece.title}-thumbnail`} 
+          objectFit="cover"
+          layout="fill"
+        />
       </div>
       <h2>
         {portfolioPiece.title}
