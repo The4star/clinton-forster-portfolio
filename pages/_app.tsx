@@ -1,5 +1,5 @@
 import * as React from "react";
-import { AppProps } from "next/dist/next-server/lib/router/router";
+import type { AppProps } from 'next/app'
 import Head from "next/head";
 
 import "../styles/main.scss";
