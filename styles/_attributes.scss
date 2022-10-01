@@ -4,16 +4,18 @@
   background: rgba(202, 223, 250, 0.8);
   border-radius: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 190px));
-  grid-template-rows: repeat(auto-fit, 200px);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   grid-gap: 5px;
   padding: 20px;
   transition: .8s;
 
   @include respond-until(tablet) {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 145px));
-    grid-template-rows: repeat(auto-fit, 150px);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     width: 80%;
+  }
+
+  @include respond-until(mobile) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   &__attribute {

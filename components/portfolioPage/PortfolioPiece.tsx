@@ -24,6 +24,7 @@ const PortfolioPiece = ({ portfolioPiece }: IProps) => {
     <div className="portfolio-piece">
       <div className="portfolio-piece__image-wrapper">
         <Image 
+          key={portfolioPiece.thumbnail.url}
           src={portfolioPiece.thumbnail.url} 
           alt={`${portfolioPiece.title}-thumbnail`} 
           objectFit="cover"

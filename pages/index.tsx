@@ -17,6 +17,7 @@ interface IProps {
   workedWith: IAttribute[];
   skills: IAttribute[];
 }
+
 const Home = ({logo, hero, socialLinks, about, workedWith, skills}:IProps) => {
   return (
     <Layout 
